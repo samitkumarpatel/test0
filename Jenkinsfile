@@ -9,7 +9,7 @@ node {
         mkdir -p src src/$BUILD_NUMBER
     """
    */
-    def folders = sh(returnStdout: true, script: "ls src")
+    def folders = sh(returnStdout: true, script: "ls $WORKSPACE")
     
     folders.split().each {
         choiceArray << it
