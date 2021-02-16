@@ -1,8 +1,8 @@
 pipeline {
     agent any;
     stages {
-        when { changeset "README.md" }
         stage('build') {
+            when { changeset "README.md" }
             steps {
                 echo "from build"
             }
