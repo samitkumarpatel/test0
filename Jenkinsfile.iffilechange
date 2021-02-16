@@ -2,7 +2,11 @@ pipeline {
     agent any;
     stages {
         stage('build') {
-            when { changeset "README.md" }
+            when { 
+                allOf{
+                    changeset "README.md"; changeset "README-one.md"
+                } 
+            }
             steps {
                 echo "from build"
             }
