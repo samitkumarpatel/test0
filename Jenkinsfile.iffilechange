@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             when { 
                 allOf{
-                    changeset "README.md", changeset "README-one.md"
+                    changeset "README.md"; changeset "README-one.md"
                 } 
             }
             steps {
