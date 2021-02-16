@@ -1,3 +1,3 @@
 ### test0
 
-This is for all type of POC build stage
+This is for all type of POC build
