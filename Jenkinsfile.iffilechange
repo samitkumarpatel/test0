@@ -1,0 +1,11 @@
+pipeline {
+    agent any;
+    stages {
+        when { changeset "README.md" }
+        stage('build') {
+            steps {
+                echo "from build"
+            }
+        }
+    }
+}
