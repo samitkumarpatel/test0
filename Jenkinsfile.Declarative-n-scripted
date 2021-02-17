@@ -1,0 +1,28 @@
+pipeline {
+    agent any;
+    stages {
+        stage('build') {
+            steps {
+                script {
+                    def jobs=[:]
+                    [
+                        [ name: 1, agent: "master"],
+                        [ name: 2, agent: "other"],
+                    ].each { 
+                        jobs["${it.name}"] = {
+                            node("${it.agent}") {
+                               stage('a') {
+                                  echo "Hello A ${it}"
+                               }
+                               stage('b') {
+                                    echo "Hello B ${it}"
+                               } 
+                            }//node
+                        }// jobs array
+                    }//each
+                    parallel jobs
+                }
+            }
+        }
+    }
+}
