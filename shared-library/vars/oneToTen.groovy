@@ -3,3 +3,4 @@ def call() {
         println "${it}"
     }​
 }
+return this;
