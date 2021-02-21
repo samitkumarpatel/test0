@@ -1,4 +1,5 @@
 node {
+    checkout scm
     def d = load 'shared-library/vars/myPipeline.groovy'
     d.myPipeline()
 }
