@@ -1,4 +1,5 @@
 node {
     checkout scm
     load 'shared-library/vars/myPipeline.groovy'
+    load 'shared-library/vars/oneToTen.groovy'
 }
