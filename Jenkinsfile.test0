@@ -1,2 +1,4 @@
-def d = load 'shared-library/myPipeline.groovy'
-d.myPipeline()
+node {
+    def d = load 'shared-library/myPipeline.groovy'
+    d.myPipeline()
+}
