@@ -2,7 +2,7 @@ node {
     checkout scm
     load 'shared-library/vars/myPipeline.groovy'
 
-    def log =load "${env.WORKSPACE}/shared-library/vars/log.groovy'
+    def log =load "${env.WORKSPACE}/shared-library/vars/log.groovy"
     log.info('Hello')
     
 }
