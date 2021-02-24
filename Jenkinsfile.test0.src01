@@ -3,7 +3,6 @@ pipeline {
      dockerfile {
         filename 'Dockerfile'
         dir "${params.DOCKERFILE_PATH}"
-        label 'custom-agent'
         additionalBuildArgs  '--build-arg PACKAGE=${params.PACKAGE}'
         args '-v /tmp:/tmp'
      }
