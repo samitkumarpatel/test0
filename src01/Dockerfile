@@ -1,3 +1,3 @@
-ARG PACKAGE
 FROM alpine
+ARG PACKAGE
 RUN apk add ${PACKAGE}
