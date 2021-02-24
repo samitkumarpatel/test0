@@ -1,0 +1,22 @@
+pipeline {
+  agent {
+     dockerfile {
+        filename 'Dockerfile'
+        dir "${params.DOCKERFILE_PATH}"
+        label 'custom-agent'
+        additionalBuildArgs  '--build-arg PACKAGE=${params.PACKAGE}'
+        args '-v /tmp:/tmp'
+    }
+    parameters {
+        string(name: 'DOCKERFILE_PATH', defaultValue: 'src0', description: 'Pick Dockerfile from a folder')
+        text(name: 'PACKAGE', defaultValue: 'curl', description: 'Package To Be Installed')
+    }
+  }
+  stages {
+    stage('build'){
+       steps {
+         sh 'git version'
+       }
+    }
+  }
+}
