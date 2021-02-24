@@ -1,3 +1,3 @@
 ARG PACKAGE
 FROM alpine
-RUN apk install ${PACKAGE}
+RUN apk add ${PACKAGE}
