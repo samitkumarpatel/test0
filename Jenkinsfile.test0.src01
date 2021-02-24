@@ -8,7 +8,7 @@ pipeline {
      }
    }
    parameters {
-        string(name: 'DOCKERFILE_PATH', defaultValue: 'src0', description: 'Pick Dockerfile from a folder')
+        string(name: 'DOCKERFILE_PATH', defaultValue: 'src01', description: 'Pick Dockerfile from a folder')
         text(name: 'PACKAGE', defaultValue: 'curl', description: 'Package To Be Installed')
    }
    stages {
