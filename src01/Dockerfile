@@ -1,3 +1,3 @@
 ARG PACKAGE
 FROM alpine
-apk install \${PACKAGE}
+apk install git
