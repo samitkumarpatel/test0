@@ -1,0 +1,13 @@
+pipeline {
+  agent any;
+  stages  {
+    stage('print url'){
+      steps {
+        script {
+          def s = checkout scm
+          print s
+        }
+      }
+    }
+  }
+}
