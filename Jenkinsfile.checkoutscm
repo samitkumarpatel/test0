@@ -5,7 +5,9 @@ pipeline {
       steps {
         script {
           def s = checkout scm
-          print s
+          print s.GIT_URL
+          print s.GIT_BRANCH
+          print s.GIT_COMMIT
         }
       }
     }
