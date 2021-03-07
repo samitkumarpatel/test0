@@ -1,0 +1,30 @@
+node {
+    deleteDir()
+    sh "git config --global credential.helper store"
+    checkout scm
+}
+
+pipeline {
+    agent any;
+    stages {
+        stage('prepare') {
+            steps {
+                sh 'echo Current build Number $BUILD_NUMBER >> $WORKSPACE/file$BUILD_NUMBER.txt'
+            }
+        }
+        
+        stage('commit') {
+            steps {
+                sh """
+                    git config --global user.email "samitkumarpatel@gmail.com"
+                    git config --global user.name "samitkumarpatel"
+                    
+                    git add file${env.BUILD_NUMBER}.txt
+                    git commit -m "Commit from Pipleine as part of BuildNumber# ${env.BUILD_NUMBER}"
+                    
+                    git push origin main
+                """
+            }
+        }
+    }
+}
