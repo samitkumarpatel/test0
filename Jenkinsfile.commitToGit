@@ -19,7 +19,8 @@ pipeline {
                     git config --global user.email "samitkumarpatel@gmail.com"
                     git config --global user.name "samitkumarpatel"
                     git status -s
-                    git add file${env.BUILD_NUMBER}.txt
+                    #git add file${env.BUILD_NUMBER}.txt
+                    git add .
                     git commit -m "Commit from Pipleine as part of BuildNumber# ${env.BUILD_NUMBER}"
                     
                     git push origin main
