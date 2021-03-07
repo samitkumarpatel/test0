@@ -1,0 +1,16 @@
+{
+    "CheckboxParameter": [
+        {
+          "key": "stage1",
+          "value": "stage1"
+        },
+        {
+          "key": "stage2",
+          "value": "stage2"
+        },
+        {
+          "key": "stage3",
+          "value": "stage3"
+        }
+    ]
+}
